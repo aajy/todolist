@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addTodo } from '../store/todoSlice';
+import { addTodoAsync } from '../store/todoSlice';
 
 export default function Input() {
 	const [task, setTask] = useState('');
@@ -9,7 +9,7 @@ export default function Input() {
 	const onSubmit = (e) => {
 		e.preventDefault();
 		dispatch(
-			addTodo({
+			addTodoAsync({
 				title: task,
 			})
 		);
