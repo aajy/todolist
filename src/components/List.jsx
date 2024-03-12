@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import TodoItem from './TodoItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTodosAsync } from '../store/todoSlice';
+import styles from './list.module.scss';
 
 export default function List() {
 	const dispatch = useDispatch();
@@ -13,7 +14,7 @@ export default function List() {
 	return (
 		<ul className='List'>
 			{todos.map((todo) => (
-				<TodoItem id={todo.id} title={todo.title} completed={todo.completed} key={todo.id} />
+				<TodoItem id={todo.id} title={todo.title} completed={todo.completed} key={todo.id} styles={styles} />
 			))}
 		</ul>
 	);
